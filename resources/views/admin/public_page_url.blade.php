@@ -8,7 +8,7 @@
             <h3>{{ $sectionName }}</h3>
             <ul class="breadcrumbs flex items-center flex-wrap justify-start gap10">
                 <li>
-                    <a href="{{ route('admin.dashboard') }}"><div class="text-tiny">Admin</div></a>
+                    <a href="{{ secure_asset(route('admin.dashboard')) }}"><div class="text-tiny">Admin</div></a>
                 </li>
                 <li>
                     <i class="icon-chevron-right"></i>
@@ -38,8 +38,8 @@
                             <div class="block-success type-main w-full mb-24">
                                 <i class="icon-chevrons-right"></i>
                                 <div class="body-title-2">
-                                    {{ route('index') }}/{{ $data->public_name }}
-                                    <a href="{{ route('index') }}/{{ $data->public_name }}" target="_blank">
+                                    {{ secure_asset(route('index')) }}/{{ $data->public_name }}
+                                    <a href="{{ secure_asset(route('index')) }}/{{ $data->public_name }}" target="_blank">
                                         <i class="icon-arrow-up-right"></i>
                                     </a>
                                 </div>
@@ -51,7 +51,7 @@
         @endif
         
 
-        <form class="form-style-2" action="{{ route('admin.public_page_url.store', ['id' => $userId]) }}" method="POST">
+        <form class="form-style-2" action="{{ secure_asset(route('admin.public_page_url.store', ['id' => $userId])) }}" method="POST">
             @csrf
             <div class="wg-box">
                 <div class="left">
@@ -61,7 +61,7 @@
                 <div class="right flex-grow">
                     <fieldset class="name mb-24">
                         <div class="body-title mb-10">URL</div>
-                        <input class="flex-grow" id="public_url" type="text" placeholder="Username" tabindex="0" value="{{route('index')}}/" aria-required="true" required="" disabled>
+                        <input class="flex-grow" id="public_url" type="text" placeholder="Username" tabindex="0" value="{{secure_asset(route('index'))}}/" aria-required="true" required="" disabled>
                     </fieldset>
                     <fieldset class="email mb-24">
                         <div class="body-title mb-10">Public name</div>
@@ -84,7 +84,7 @@
         @section("script")
              <script>
                 document.getElementById('public_name').addEventListener("input",(e)=>{
-                    document.getElementById("public_url").value = "{{route('index')}}/" + e.target.value;
+                    document.getElementById("public_url").value = "{{secure_asset(route('index'))}}/" + e.target.value;
                 });
              </script>
         @endsection

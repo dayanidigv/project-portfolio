@@ -8,7 +8,7 @@
         <h3>{{ $sectionName }}</h3>
         <ul class="breadcrumbs flex items-center flex-wrap justify-start gap10">
             <li>
-                <a href="{{ route('admin.dashboard') }}">
+                <a href="{{ secure_asset(route('admin.dashboard')) }}">
                     <div class="text-tiny">Admin</div>
                 </a>
             </li>
@@ -130,7 +130,7 @@
                                                 <i class="icon-edit-3"></i>
                                             </div>
                                         </a>
-                                        <form action="{{ route('admin.achievements.destroy', ['id' => $data->id]) }}" method="POST" class="delete-form">
+                                        <form action="{{ secure_asset(route('admin.achievements.destroy', ['id' => $data->id])) }}" method="POST" class="delete-form">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="delete-btn" onclick="return confirmDelete()" style="background:none; border:none; padding:0; margin:0; color:red; cursor:pointer;">

@@ -10,7 +10,7 @@
                 </a>
                 <div class="login-box">
                     <h3>Login to account</h3>
-                    <form action="{{ route('login.post') }}" method="POST" class="form-login flex flex-column gap24">
+                    <form action="{{ secure_asset(route('login.post')) }}" method="POST" class="form-login flex flex-column gap24">
                         @csrf
                         <fieldset class="email">
                             <div class="body-title mb-10">Email address <span class="tf-color-1">*</span></div>

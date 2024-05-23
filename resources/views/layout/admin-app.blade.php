@@ -99,7 +99,7 @@
                                 <a href="#" class="">
                                     <div class="icon"><i class="icon-log-out"></i></div>
                                     <div class="text">
-                                        <form action="{{ route('logout') }}" method="POST" style="display:inline;">
+                                        <form action="{{ secure_asset(route('logout')) }}" method="POST" style="display:inline;">
                                             @csrf
                                             <button type="submit" class="logout-button" style="background:none; border:none; padding:0; margin:0; color:inherit; cursor:pointer;">Logout</button>
                                         </form>
@@ -188,7 +188,7 @@
                                                 <div class="icon">
                                                     <i class="icon-log-out"></i>
                                                 </div>
-                                                <form action="{{ route('logout') }}" method="POST"
+                                                <form action="{{ secure_asset(route('logout')) }}" method="POST"
                                                     style="display:inline;">
                                                     @csrf
                                                     <button type="submit" style="background:none; border:none; padding:0; margin:0; color:inherit; cursor:pointer;">Logout</button>
