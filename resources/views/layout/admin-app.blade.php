@@ -292,8 +292,8 @@
 
 
 @section('script')
-<script src="{{ asset('js/zoom.js') }}"></script>
-<script src="{{ asset('js/apexcharts/apexcharts.js') }}"></script>
-<!-- <script src="{{ asset('js/switcher.js') }}"></script> -->
-<script src="{{ asset('js/theme-settings.js') }}"></script>
+<script src="{{ secure_asset('js/zoom.js') }}"></script>
+<script src="{{ secure_asset('js/apexcharts/apexcharts.js') }}"></script>
+<!-- <script src="{{ secure_asset('js/switcher.js') }}"></script> -->
+<script src="{{ secure_asset('js/theme-settings.js') }}"></script>
 @endsection
