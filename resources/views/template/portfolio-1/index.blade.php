@@ -7,10 +7,10 @@
               <div class="card profile-card">
                 <div class="card-body">
                   <div class="image text-center">
-                    <img src="img/images/profile.png" alt="profile">
+                    <!-- <img src="img/images/profile.png" alt="profile"> -->
                   </div>
                   <div class="text">
-                    <h3 class="card-title">{{ $user->name }} 👋</h3>
+                    <h3 class="card-title">{{ $user->name }} </h3>
                     <p>{{$user->Short_bio}}</p>
                     <div class="common-button-groups">
                       @if ($user->phone_no != null)
@@ -42,14 +42,14 @@
                         Copy Email
                       </button>
                     </div>
-                    <div class="social-media-icon">
+                    <!-- <div class="social-media-icon">
                       <ul class="list-unstyled">
                         <li><a href="#"><i class="fab fa-facebook"></i></a></li>
                         <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
                         <li><a href="#"><i class="fab fa-github"></i></a></li>
                         <li><a href="#"><i class="fab fa-youtube"></i></a></li>
                       </ul>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
               </div>
@@ -57,141 +57,30 @@
             <div class="col-xl-4">
               <div class="row g-4">
                 <div class="col-lg-12">
-                  <div class="card">
-                    <div class="card-body work-experiance-card">
-                      <h3 class="card-title">Work Experience</h3>
-                      <div class="work-experiance-main">
-                        <ul class="work-experiance-slider list-unstyled">
-                          <li>
-                            <div class="date">
-                              <p>2021-2024</p>
-                            </div>
-                            <div class="info">
-                              <div class="icon">
-                                <img src="img/icons/adobe.svg" alt="adobe">
-                              </div>
-                              <div class="text">
-                                <h4 class="title">Adobe</h4>
-                                <h6 class="subtitle">Senior UI UX Designer</h6>
-                              </div>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="date">
-                              <p>2021-2024</p>
-                            </div>
-                            <div class="info">
-                              <div class="icon">
-                                <img src="img/icons/google.svg" alt="google">
-                              </div>
-                              <div class="text">
-                                <h4 class="title">Google Inc.
-                                </h4>
-                                <h6 class="subtitle">Senior Product Designer
-  
-                                </h6>
-                              </div>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="date">
-                              <p>2021-2024</p>
-                            </div>
-                            <div class="info">
-                              <div class="icon">
-                                <img src="img/icons/meta.svg" alt="meta">
-                              </div>
-                              <div class="text">
-                                <h4 class="title">Meta Inc.
-                                </h4>
-                                <h6 class="subtitle">Product Designer
-                                </h6>
-                              </div>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="date">
-                              <p>2021-2024</p>
-                            </div>
-                            <div class="info">
-                              <div class="icon">
-                                <img src="img/icons/adobe.svg" alt="adobe">
-                              </div>
-                              <div class="text">
-                                <h4 class="title">Adobe</h4>
-                                <h6 class="subtitle">Senior UI UX Designer</h6>
-                              </div>
-                            </div>
-                          </li>
-                        </ul>
-                        <ul class="work-experiance-slider list-unstyled">
-                          <li>
-                            <div class="date">
-                              <p>2021-2024</p>
-                            </div>
-                            <div class="info">
-                              <div class="icon">
-                                <img src="img/icons/adobe.svg" alt="adobe">
-                              </div>
-                              <div class="text">
-                                <h4 class="title">Adobe</h4>
-                                <h6 class="subtitle">Senior UI UX Designer</h6>
-                              </div>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="date">
-                              <p>2021-2024</p>
-                            </div>
-                            <div class="info">
-                              <div class="icon">
-                                <img src="img/icons/google.svg" alt="google">
-                              </div>
-                              <div class="text">
-                                <h4 class="title">Google Inc.
-                                </h4>
-                                <h6 class="subtitle">Senior Product Designer
-  
-                                </h6>
-                              </div>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="date">
-                              <p>2021-2024</p>
-                            </div>
-                            <div class="info">
-                              <div class="icon">
-                                <img src="img/icons/meta.svg" alt="meta">
-                              </div>
-                              <div class="text">
-                                <h4 class="title">Meta Inc.
-                                </h4>
-                                <h6 class="subtitle">Product Designer
-                                </h6>
-                              </div>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="date">
-                              <p>2021-2024</p>
-                            </div>
-                            <div class="info">
-                              <div class="icon">
-                                <img src="img/icons/adobe.svg" alt="adobe">
-                              </div>
-                              <div class="text">
-                                <h4 class="title">Adobe</h4>
-                                <h6 class="subtitle">Senior UI UX Designer</h6>
-                              </div>
-                            </div>
-                          </li>
-                        </ul>
+                  <div class="card lets-talk-together-card">
+                    <div class="card-body">
+                      <div class="scrolling-info">
+                        <div class="slider-item">
+                          <p>
+                            {{$user->Short_bio}}
+                          </p>
+                        </div>
                       </div>
+                      <h3 class="card-title">{{$user->cta}}</span>
+                      </h3>
+                      <a class="link-btn" href="contact.html"> Let's Talk
+                        <svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path d="M17.5 11.6665V6.6665H12.5" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                          <path d="M17.5 6.6665L10 14.1665L2.5 6.6665" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        </svg>
+                      </a>
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-12">
+                <!-- <div class="col-lg-12">
                   <div class="card expertise-card">
                     <div class="card-body">
                       <h3 class="card-title">My Expert Area
@@ -262,10 +151,10 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
-            <div class="col-xl-4">
+            <!-- <div class="col-xl-4">
               <div class="card card-projects">
                 <div class="card-body">
   
@@ -321,86 +210,22 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
           <div class="services-area mt-24">
             <div class="row g-4">
-              <div class="col-xl-8">
-                <div class="card services-card">
-                  <div class="card-body">
-                    <h3 class="card-title">Services I Offered
-                      <a class="link-btn" href="services.html"> See All Services
-                        <svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <path d="M4.16699 10H15.8337" stroke="#4770FF" stroke-width="1.5" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                          <path d="M10.833 15L15.833 10" stroke="#4770FF" stroke-width="1.5" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                          <path d="M10.833 5L15.833 10" stroke="#4770FF" stroke-width="1.5" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                        </svg>
-  
-                      </a></h3>
-                    <div class="services-main mt-24">
-                      <div class="row g-4">
-                        <div class="col-md-3 col-sm-6 col-6">
-                          <div class="services-item text-center">
-                            <div class="image">
-                              <img src="img/icons/ui-ux.svg" alt="ui-ux">
-                            </div>
-                            <div class="text">
-                              <h3 class="title">UI UX Design</h3>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-6">
-                          <div class="services-item text-center">
-                            <div class="image">
-                              <img src="img/icons/app.svg" alt="app">
-                            </div>
-                            <div class="text">
-                              <h3 class="title">Mobile App</h3>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-6">
-                          <div class="services-item text-center">
-                            <div class="image">
-                              <img src="img/icons/prd-design.svg" alt="prd-design">
-                            </div>
-                            <div class="text">
-                              <h3 class="title">Product Design</h3>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-6">
-                          <div class="services-item text-center">
-                            <div class="image">
-                              <img src="img/icons/branding.svg" alt="branding">
-                            </div>
-                            <div class="text">
-                              <h3 class="title">Branding</h3>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-4">
+              
+              <!-- <div class="col-xl-4">
                 <div class="card lets-talk-together-card">
                   <div class="card-body">
                     <div class="scrolling-info">
                       <div class="slider-item">
                         <p>
-                          Available For Hire 🚀 Crafting Digital Experiences 🎨 Available For Hire 🚀 Crafting Digital
-                          Experiences 🎨
+                          {{$user->Short_bio}}
                         </p>
                       </div>
                     </div>
-                    <h3 class="card-title">Let's👋
-                      <span class="d-block">Work Together</span>
+                    <h3 class="card-title">{{$user->cta}}</span>
                     </h3>
                     <a class="link-btn" href="contact.html"> Let's Talk
                       <svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
@@ -413,7 +238,7 @@
                     </a>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
