@@ -57,7 +57,7 @@
                 @enderror
             </fieldset>
             <fieldset class="phone">
-                <div class="body-title mb-10">Phone no.</div>
+                <div class="body-title mb-10">Phone no. <span class="tf-color-1">*</span></div>
                 <input type="text" placeholder="Enter your phone number" name="phone_no" tabindex="0" value="{{ !empty($pageData) ? old('phone_no', $pageData->phone_no) : old('phone_no')}}"
                     aria-required="true" required="">
                 @error('phone_no')
@@ -78,7 +78,7 @@
 
             <div class="gap22 cols">
                 <fieldset class="category">
-                    <div class="body-title mb-10">Date of Birth</div>
+                    <div class="body-title mb-10">Date of Birth <span class="tf-color-1">*</span></div>
                     <div class="select">
                         <input type="date" name="dob" value="{{ !empty($pageData) ? old('dob', $pageData->dob) : old('dob')}}" tabindex="0"
                         aria-required="true" required="">
