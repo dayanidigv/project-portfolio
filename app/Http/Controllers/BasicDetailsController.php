@@ -14,9 +14,9 @@ class BasicDetailsController extends Controller
         $data = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|unique:basic_details,email',
-            'phone_no' => 'nullable|string|min:10|regex:/^[0-9\+-]+$/',
+            'phone_no' => 'required|string|min:10|regex:/^[0-9\+-]+$/',
             'short_bio' => 'required|string|max:1000',
-            'dob' => 'nullable|date|before:18',
+            'dob' => 'required|date',
             'gender' => 'required|in:Male,Female,Other', 
             'address' => 'required|string|max:255',
             'cta' => 'required|string|max:255',
@@ -62,9 +62,9 @@ class BasicDetailsController extends Controller
                         ->where('id', '!=', $basicDetail->id);
                 }),
             ],
-            'phone_no' => 'nullable|string|min:10|regex:/^[0-9\+-]+$/',
+            'phone_no' => 'required|string|min:10|regex:/^[0-9\+-]+$/',
             'short_bio' => 'required|string|max:1000',
-            'dob' => 'nullable|date|before:18 years ago',
+            'dob' => 'required||date',
             'gender' => 'required|in:Male,Female,Other',
             'address' => 'required|string|max:255',
             'cta' => 'required|string|max:255',
