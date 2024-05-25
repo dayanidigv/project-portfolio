@@ -34,5 +34,4 @@ class PublicPageUrlController extends Controller
         return back()->with('message', 'Your page has been successfully published!');
     }
 
-
 }

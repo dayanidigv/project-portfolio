@@ -19,6 +19,39 @@
   <link rel="stylesheet" href="{{ secure_asset('css/portfolio-style.css') }}">
   <link rel="stylesheet" href="{{ secure_asset('css/portfolio-responsive.css') }}">
   @yield('style')
+
+  <style>
+    @if ($user->primaryColor)
+      :root {
+        --primary: {{ $user->primaryColor}};
+      }
+    @endif
+    
+
+    .primary-color{
+      color:var(--primary);
+    }
+
+  </style>
+    <script>
+       const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary');
+        let rgbValues;
+        if (primaryColor.startsWith('#')) {
+            rgbValues = [
+                parseInt(primaryColor.substring(1, 3), 16), 
+                parseInt(primaryColor.substring(3, 5), 16), 
+                parseInt(primaryColor.substring(5, 7), 16), 
+            ];
+        } else {
+            rgbValues = primaryColor.match(/\d{1,3}/g);
+        }
+        if (rgbValues && rgbValues.length === 3) {
+            const [r, g, b] = rgbValues.map(value => parseInt(value, 10));
+            const secondaryOpacity = 0.6; 
+            const secondaryColor = `rgba(${r}, ${g}, ${b}, ${secondaryOpacity})`;    
+            document.documentElement.style.setProperty('--secondary', secondaryColor);
+        }
+    </script>
 </head>
 
 <body>

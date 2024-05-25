@@ -81,6 +81,29 @@
                                 </ul>
                             </li>
 
+                            <li class="menu-item has-children {{ $title == 'Messages' ? 'active' :  '' }}">
+                                <a href="javascript:void(0);" class="menu-item-button">
+                                    <div class="icon">
+                                    <i class="icon-message-square"></i>
+                                    </div>
+                                    <div class="text">Messages</div>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li class="sub-menu-item">
+                                        <a href="{{ route('admin.messages.inbox') }}"
+                                            class="{{ $sectionName == 'Inbox Messages' ? 'active' : '' }}">
+                                            <div class="text">Inbox</div>
+                                        </a>
+                                    </li>
+                                    <li class="sub-menu-item">
+                                        <a href="{{ route('admin.messages.archived') }}"
+                                            class="{{ $sectionName == 'Archived Messages' ? 'active' : '' }}">
+                                            <div class="text">Archived</div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
                             <li class="menu-item {{ $sectionName == 'FAQs' ? 'active' : '' }}">
                                 <a href="{{ route('admin.faqs') }}" class="">
                                     <div class="icon">
@@ -142,7 +165,9 @@
                                     <div class="dropdown">
                                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                             <span class="header-item">
-                                                <span class="text-tiny">1</span>
+                                                @if(!empty($unReadMessages))
+                                                    <span class="text-tiny">{{count($unReadMessages)}}</span>
+                                                @endif
                                                 <i class="icon-message-square"></i>
                                             </span>
                                         </button>
@@ -150,19 +175,32 @@
                                             <li>
                                                 <h6>Message</h6>
                                             </li>
-                                            <li>
-                                                <div class="noti-item w-full wg-user active">
-                                                    <div class="flex-grow">
-                                                        <div class="flex items-center justify-between">
-                                                            <a href="#" class="body-title">Cameron Williamson</a>
-                                                            <div class="time">10:13 PM</div>
+                                            @if (!empty($unReadMessages))
+                                                @foreach ( $unReadMessages as $message)
+                                                <li>
+                                                    <div class="noti-item w-full wg-user active">
+                                                        <div class="flex-grow">
+                                                            <div class="flex items-center justify-between">
+                                                                <a href="#" class="body-title">{{$message->subject}}</a>
+                                                                <div class="time">{{ \Carbon\Carbon::parse($message->received_at)->format('M d, Y, h:i A') }}</div>
+                                                            </div>
+                                                            <div class="text-tiny">{{$message->message}}</div>
                                                         </div>
-                                                        <div class="text-tiny">Hello?</div>
                                                     </div>
-                                                </div>
-                                            </li>
-                                            
-                                            <li><a href="#" class="tf-button w-full">View all</a></li>
+                                                </li>
+                                                @endforeach
+                                                <li><a href="#" class="tf-button w-full">View all</a></li>
+                                            @else
+                                                <li>
+                                                    <div class="noti-item w-full wg-user active">
+                                                        <div class="flex-grow">
+                                                            <div class="flex items-center justify-between">
+                                                                <div  class="body-title">No new messages available.</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            @endif
                                         </ul>
                                     </div>
                             </div>

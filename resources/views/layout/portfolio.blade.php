@@ -18,7 +18,7 @@
                   </div>
                   <ul class="navbar-info mx-auto">
                     <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="">
+                      <a class="nav-link {{ $user->currentPage == "/" ? "active" : "" }}" aria-current="page" href="{{route('portfolio.subPage',[ $publicName = $user->publicName , $currentPage = ""])}}">
                         <svg class="nav-icon" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path
                             d="M13.475 4.92481L9.03083 1.46814C8.64082 1.16473 8.1608 1 7.66667 1C7.17254 1 6.69251 1.16473 6.3025 1.46814L1.8575 4.92481C1.59037 5.13254 1.37424 5.39858 1.22563 5.7026C1.07701 6.00662 0.99984 6.34058 1 6.67897V12.679C1 13.121 1.17559 13.5449 1.48816 13.8575C1.80072 14.17 2.22464 14.3456 2.66667 14.3456H12.6667C13.1087 14.3456 13.5326 14.17 13.8452 13.8575C14.1577 13.5449 14.3333 13.121 14.3333 12.679V6.67897C14.3333 5.99314 14.0167 5.34564 13.475 4.92481Z"
@@ -30,7 +30,7 @@
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="about.html">
+                      <a class="nav-link {{ $user->currentPage == "about" ? "active" : "" }}" href="{{route('portfolio.subPage',[ $publicName = $user->publicName , $currentPage = "about"])}}">
                         <svg class="nav-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path
                             d="M9 9.8335C9.66304 9.8335 10.2989 9.5701 10.7678 9.10126C11.2366 8.63242 11.5 7.99654 11.5 7.3335C11.5 6.67045 11.2366 6.03457 10.7678 5.56573C10.2989 5.09689 9.66304 4.8335 9 4.8335C8.33696 4.8335 7.70107 5.09689 7.23223 5.56573C6.76339 6.03457 6.5 6.67045 6.5 7.3335C6.5 7.99654 6.76339 8.63242 7.23223 9.10126C7.70107 9.5701 8.33696 9.8335 9 9.8335Z"
@@ -45,7 +45,7 @@
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="portfolio.html">
+                      <a class="nav-link {{ $user->currentPage == "work" ? "active" : "" }}" href="{{route('portfolio.subPage',[ $publicName = $user->publicName , $currentPage = "work"])}}">
                         <svg class="nav-icon" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path
                             d="M2.00326 3.99733L7.95159 1.40649C8.04974 1.36442 8.15533 1.34243 8.26212 1.34181C8.3689 1.34119 8.47473 1.36196 8.57337 1.40289C8.67201 1.44382 8.76145 1.50408 8.83642 1.58013C8.9114 1.65617 8.97039 1.74646 9.00992 1.84566L13.1133 11.764C13.1985 11.9651 13.2014 12.1917 13.1213 12.3949C13.0412 12.5982 12.8845 12.7618 12.6849 12.8507L6.73742 15.4415C6.63922 15.4837 6.53356 15.5058 6.42668 15.5065C6.3198 15.5072 6.21387 15.4864 6.11514 15.4455C6.0164 15.4046 5.92688 15.3442 5.85184 15.2681C5.7768 15.192 5.71778 15.1016 5.67826 15.0023L1.57492 5.08316C1.48963 4.88204 1.48673 4.65546 1.56684 4.45222C1.64696 4.24898 1.80367 4.08616 2.00326 3.99733Z"
@@ -61,7 +61,7 @@
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="contact.html">
+                      <a class="nav-link {{ $user->currentPage == "contact" ? "active" : "" }}" href="{{route('portfolio.subPage',[ $publicName = $user->publicName , $currentPage = "contact"])}}">
                         <svg class="nav-icon" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M5.66699 5.5H12.3337" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
                           <path d="M5.66699 8.8335H10.667" stroke-width="1.4" stroke-linecap="round"
@@ -117,7 +117,7 @@
                         <small class="theme-text d-block d-xl-none">Change appearance</small>
                       </span>
                     </button>
-                    <a href="contact.html" class="lets-talk-btn">
+                    <a href="{{route('portfolio.subPage',[ $publicName = $user->publicName , $currentPage = "contact"])}}" class="lets-talk-btn">
                       Let's Talk
                       <svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -164,7 +164,6 @@
       </div>
       @endif
 
-      <!-- background shape area end -->
     </main>
 
     @if(!$user->message)

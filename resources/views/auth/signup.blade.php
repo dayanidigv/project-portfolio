@@ -34,24 +34,26 @@
                         <fieldset class="password">
                             <div class="body-title mb-10">Password <span class="tf-color-1">*</span></div>
                             <input class="password-input" type="password" placeholder="Enter your password" name="password" aria-required="true" required="">
-                            @error('password')
-                                <p class="error text-danger">{{ $message }}</p>
-                            @enderror
                             <span class="show-pass">
                                 <i class="icon-eye view"></i>
                                 <i class="icon-eye-off hide"></i>
                             </span>
+                            @error('password')
+                                <p class="error text-danger">{{ $message }}</p>
+                            @enderror
+                            
                         </fieldset>
                         <fieldset class="password">
                             <div class="body-title mb-10">Confirm password <span class="tf-color-1">*</span></div>
                             <input class="password-input" type="password" placeholder="Confirm your password" name="password_confirmation" aria-required="true" required="">
-                            @error('password_confirmation')
-                                <p class="error text-danger">{{ $message }}</p>
-                            @enderror
                             <span class="show-pass">
                                 <i class="icon-eye view"></i>
                                 <i class="icon-eye-off hide"></i>
                             </span>
+                            @error('password_confirmation')
+                                <p class="error text-danger">{{ $message }}</p>
+                            @enderror
+                            
                         </fieldset>
                         <button type="submit" class="tf-button w-full">Register</button>
                     </form>

@@ -45,7 +45,12 @@
 
 24/05/2024  - Created portfolio message for users without complete basic details to public the page, showed message on that user's public page
             
-25/05/2024  - Modified the store method in the public page controller
-            - Added a check to redirect users to the basic details form if their basic details are not complete
-            - Implemented validation for public_name to ensure it meets requirements (string, max 255 characters, no whitespace or symbols, unique)
-            - Enhanced user feedback messages for better clarity
+25/05/2024  - public page controller and public page
+                - Modified the store method in the public page controller
+                - Added a check to redirect users to the basic details form if their basic details are not complete
+                - Implemented validation for public_name to ensure it meets requirements (string, max 255 characters, no whitespace or symbols, unique)
+                - Enhanced user feedback messages for better clarity
+            - create all routes for portfolio
+                - About, Work, Contact
+            - create message table in database
+

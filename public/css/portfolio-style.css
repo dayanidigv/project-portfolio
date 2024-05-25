@@ -267,6 +267,7 @@ p {
 
 .header-area .container .navbar-brand .logo-icon {
 	fill: var(--black);
+	color:var(--primary);
 }
 
 .header-area .container .navbar-brand span {
@@ -317,12 +318,12 @@ p {
 }
 
 .header-area .navbar-info .nav-link.active {
-	color: var(--black);
+	color: var(--primary);
 	background-color: var(--background);
 }
 
 .header-area .navbar-info .nav-link.active .nav-icon {
-	stroke: var(--black);
+	stroke: var(--primary);
 }
 
 .header-area .navbar-info .nav-item:hover .nav-link {
@@ -459,7 +460,7 @@ p {
 }
 
 .common-button-groups .btn:hover {
-	background-color: #2563EB;
+	background-color: var(--secondary);
 }
 
 .common-button-groups .btn .icon {
@@ -911,7 +912,7 @@ p {
 .content-box-card .counter-area .counter .counter-item .number {
 	font-size: 40px;
 	font-weight: 600;
-	color: var(--black);
+	color: var(--primary);
 	line-height: 0.9em;
 }
 
@@ -1995,7 +1996,7 @@ p {
 }
 
 .leave-comments-area .comments-box .submit-btn:hover {
-	background-color: #2563EB;
+	background-color: var(--secondary);
 }
 
 .leave-comments-area .comments-box .submit-btn .icon {

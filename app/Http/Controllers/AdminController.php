@@ -28,16 +28,18 @@ class AdminController extends Controller
             $pageData = $this->pageDataToBeEmpty($pageData);
         }else if($sectionName == "Basic Details"){
             $pageData = $userId ? BasicDetails::where('user_id', $userId)->first() : []; 
-            // $pageData = $this->pageDataToBeEmpty($pageData);
         }else if($sectionName == "Public Page Url"){
             $pageData = $userId ? PublicPageUrls::where('user_id', $userId)->get() : []; 
             $pageData = $this->pageDataToBeEmpty($pageData);
-        } else{
+        } else if($sectionName == "Archived Messages"){
+            $pageData = $user->messages()->where('read',"1")->get(); 
+            $pageData = $this->pageDataToBeEmpty($pageData);
+        }else{
             $pageData = []; 
         }
 
-        
-        
+        $message = $user->messages()->where('read',"0")->get();
+        $message = $this->pageDataToBeEmpty($message);
 
         return [
             'title' => $title,
@@ -45,6 +47,7 @@ class AdminController extends Controller
             'userName' => $userName,
             'userId' => $userId,
             'pageData' => $pageData,
+            'unReadMessages' => $message,
         ];
     }
 
@@ -90,6 +93,18 @@ class AdminController extends Controller
     {
         $data = $this->getUserData('Testimonial', 'About');
         return view('admin.testimonial', $data);
+    }
+
+    public function inboxMessages()
+    {
+        $data = $this->getUserData('Inbox Messages', 'Messages');
+        return view('admin.inbox-messages', $data);
+    }
+
+    public function archivedMessages()
+    {
+        $data = $this->getUserData('Archived Messages', 'Messages');
+        return view('admin.archived-messages', $data);
     }
 
     public function faqs()

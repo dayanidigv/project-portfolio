@@ -24,7 +24,7 @@ class BasicDetailsController extends Controller
         ]);
 
         // Create a new basic details
-        $basicDetails = BasicDetails::create([
+        BasicDetails::create([
             'user_id' => $id,
             'name' => $request->name,
             'email' => $request->email,

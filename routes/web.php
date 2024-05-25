@@ -4,6 +4,7 @@ use App\Http\Controllers\AchievementController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BasicDetailsController;
+use App\Http\Controllers\messageController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\PublicPageUrlController;
 use Illuminate\Support\Facades\Route;
@@ -28,6 +29,8 @@ Route::middleware('auth')->group(function () {
             Route::get('/publications', 'publications')->name('admin.publications');
             Route::get('/awards', 'awards')->name('admin.awards');
             Route::get('/testimonial', 'testimonial')->name('admin.testimonial');
+            Route::get('/inbox-messages', 'inboxMessages')->name('admin.messages.inbox');
+            Route::get('/archived-messages', 'archivedMessages')->name('admin.messages.archived');
         });
 
         Route::controller(AchievementController::class)->group(function () {
@@ -72,5 +75,7 @@ Route::prefix('api')->group(function () {
 });
 
 
-Route::get('/{publicName}', [PortfolioController::class, 'index']);
+Route::get('/{publicName}', [PortfolioController::class, 'index'])->name('portfolio.index');
+Route::post('/{publicName}/message/', [messageController::class, 'store'])->name('portfolio.message');
+Route::get('/{publicName}/{currentPage}', [PortfolioController::class, 'SubPage'])->name('portfolio.subPage');
 
