@@ -2,14 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Achievement;
+use App\Models\BasicDetails;
 use App\Models\PublicPageUrls;
-use App\Models\User;
 use Illuminate\Http\Request;
 
 class PublicPageUrlController extends Controller
 {
     public function store(Request $request, $id){
+
+        $user = BasicDetails::where('user_id', $id)->first();
+        if ($user === null) {
+            return redirect()->route('admin.basic-details')->with('error', 'Please complete your basic details first.');
+        }
 
         $request->validate([
             'public_name' => 'required|string|max:255|regex:/^[a-zA-Z0-9]+$/|unique:public_page_urls',
@@ -21,14 +25,13 @@ class PublicPageUrlController extends Controller
             'public_name.unique' => 'The public name has already been taken.',
         ]);
 
-        $PublicPageUrl = PublicPageUrls::create([
+        PublicPageUrls::create([
             'user_id' => $id,
             'public_name' => $request->public_name,
             'status' => "a",
         ]);
 
-        // Return a response
-        return back()->with('message', 'Page published successfully!');
+        return back()->with('message', 'Your page has been successfully published!');
     }
 
 
