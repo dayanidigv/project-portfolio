@@ -1,0 +1,51 @@
+18/05/2024  - Project Started
+            - Selected Admin Panel Template
+            - Started learning the basics of Laravel
+
+19/05/2024  - Selected Portfolio Template
+            - Installed Laravel and set up the environment
+
+20/05/2024  - Created basic routes to display index and other basic details pages
+            - Created database table for basic details with CRUD operations
+            - Created login authentication routes
+            - Created admin > about > achievements
+            - End of the day completed:
+                - Login page
+                - Registration page
+                - Admin panel page (only UI)
+                    - Admin > Home
+                        - Admin > Basic Details page 
+                    - Admin > About
+                        - Admin > Achievements 
+                    - Admin > FAQs 
+
+21/05/2024  - Created routes for additional empty admin pages:
+                - Admin > About > Testimonial
+                - Admin > About > Awards 
+                - Admin > About > Publication
+            - Added full functionality for:
+                - Admin > About > Achievements (CRUD Operations)
+            - Created sample API to get user details (http://127.0.0.1:8000/api/{username}/get/achievement)
+            - Created public URL page with full functionality:
+                - Validated public name (string, max 255 characters, no whitespace or symbols, unique)
+                - Created routes for this format (http://127.0.0.1:8000/{username})
+                    - Returned data to show user details only in JSON format (name, email...)
+                - Stored page URL details in database (user ID, public name)
+
+22/05/2024  - Added full functionality for:
+                - Admin > Home > Basic Details 
+                    - Form data validation
+                    - Database store and update operations
+            - Added portfolio template UI for user's public page route (http://127.0.0.1:8000/{username})
+                - Displayed user basic details on the public page with UI/UX
+
+23/05/2024  - Created railway.app account 
+            - Connected project folder to GitHub Repository
+            - Hosted the project for testing with team mates
+
+24/05/2024  - Created portfolio message for users without complete basic details to public the page, showed message on that user's public page
+            
+25/05/2024  - Modified the store method in the public page controller
+            - Added a check to redirect users to the basic details form if their basic details are not complete
+            - Implemented validation for public_name to ensure it meets requirements (string, max 255 characters, no whitespace or symbols, unique)
+            - Enhanced user feedback messages for better clarity
