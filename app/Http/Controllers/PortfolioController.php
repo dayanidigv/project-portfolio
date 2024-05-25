@@ -35,6 +35,7 @@ class PortfolioController extends Controller
         $user->primaryColor = "#ff0000";
 
         $user->publicName = $publicName;
+        $user->currentPage = "/";
 
         return view('template.portfolio-1.index', ['user' => $user]);
     }
