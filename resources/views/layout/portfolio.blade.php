@@ -6,13 +6,13 @@
             <div class="container">
               <div class="menu-container">
                 <div class="logo">
-                  <a class="navbar-brand me-0" href="index-2.html">
+                  <a class="navbar-brand me-0" href="{{route('portfolio.subPage',[ $publicName = $user->publicName , $currentPage = ""])}}">
                     <span>Portfolio<span class="primary"></span></span>
                   </a>
                 </div>
                 <div class="navbar-main d-flex flex-grow-1">
                   <div class="logo inner-logo d-block d-xl-none">
-                    <a class="navbar-brand me-0" href="index-2.html">
+                    <a class="navbar-brand me-0" href="{{route('portfolio.subPage',[ $publicName = $user->publicName , $currentPage = ""])}}">
                       <span>Portfolio<span class="primary"></span></span>
                     </a>
                   </div>

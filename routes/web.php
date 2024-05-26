@@ -74,8 +74,17 @@ Route::prefix('api')->group(function () {
     });
 });
 
+Route::prefix('check')->group(function () {
+    Route::get('/timezone', function () {
+        return config('app.timezone');
+    });
+    Route::get('/appurl', function () {
+        return config('app.url');
+    });
+});
 
 Route::get('/{publicName}', [PortfolioController::class, 'index'])->name('portfolio.index');
 Route::post('/{publicName}/message/', [MessageController::class, 'store'])->name('portfolio.message');
 Route::get('/{publicName}/{currentPage}', [PortfolioController::class, 'SubPage'])->name('portfolio.subPage');
+
 
