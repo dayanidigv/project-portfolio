@@ -8,19 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- Theme Style -->
-    <link rel="stylesheet" type="text/css" href="{{ secure_asset('css/animate.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ secure_asset('css/animation.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ secure_asset('css/bootstrap.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ secure_asset('css/bootstrap-select.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ secure_asset('css/style.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ secure_asset('css/notify.css') }}">
+    <link rel="stylesheet" type="text/css" href="/css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/animation.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-select.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/notify.css">
 
     @yield('style')
     <!-- Font -->
-    <link rel="stylesheet" href="{{ secure_asset('font/fonts.css') }}">
+    <link rel="stylesheet" href="/font/fonts.css">
 
     <!-- Icon -->
-    <link rel="stylesheet" href="{{ secure_asset('icon/style.css') }}">
+    <link rel="stylesheet" href="/icon/style.css">
 
     <!-- Favicon and Touch Icons  -->
     <!-- <link rel="shortcut icon" href="images/favicon.png">
@@ -33,11 +33,11 @@
     @yield('body')
 
     <!-- Javascript -->
-    <script src="{{ secure_asset('js/jquery.min.js') }}"></script>
-    <script src="{{ secure_asset('js/bootstrap.min.js') }}"></script>
-    <script src="{{ secure_asset('js/bootstrap-select.min.js') }}"></script>
-    <script src="{{ secure_asset('js/main.js') }}"></script>
-    <script src="{{ secure_asset('js/notify.js') }}"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap-select.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/notify.js"></script>
 
     <!-- Display success message -->
     @if (session('message'))

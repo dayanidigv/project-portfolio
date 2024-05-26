@@ -18,6 +18,7 @@ class PortfolioController extends Controller
 
     public function index($publicName)
     {
+
         $pageData = PublicPageUrls::where('public_name', $publicName)->first();
 
         if (!$pageData) {

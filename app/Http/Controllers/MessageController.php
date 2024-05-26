@@ -7,7 +7,7 @@ use App\Models\PublicPageUrls;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class messageController extends Controller
+class MessageController extends Controller
 {
     /**
      * Display a listing of the resource.

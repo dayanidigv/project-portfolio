@@ -4,7 +4,7 @@ use App\Http\Controllers\AchievementController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BasicDetailsController;
-use App\Http\Controllers\messageController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\PublicPageUrlController;
 use Illuminate\Support\Facades\Route;
@@ -76,6 +76,6 @@ Route::prefix('api')->group(function () {
 
 
 Route::get('/{publicName}', [PortfolioController::class, 'index'])->name('portfolio.index');
-Route::post('/{publicName}/message/', [messageController::class, 'store'])->name('portfolio.message');
+Route::post('/{publicName}/message/', [MessageController::class, 'store'])->name('portfolio.message');
 Route::get('/{publicName}/{currentPage}', [PortfolioController::class, 'SubPage'])->name('portfolio.subPage');
 
