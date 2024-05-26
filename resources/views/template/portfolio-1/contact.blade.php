@@ -63,7 +63,7 @@
                   <div class="contact-area">
                     <div class="leave-comments-area">
                       <div class="comments-box">
-                        <form  action="{{ secure_asset(route('portfolio.message',[$pageName = $user->publicName]))}}" method="POST">
+                        <form  action="{{ route('portfolio.message',[$pageName = $user->publicName])}}" method="POST">
                         @csrf
                           <div class="row gx-3">
                             <div class="col-md-6">

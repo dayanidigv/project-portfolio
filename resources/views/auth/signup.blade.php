@@ -13,7 +13,7 @@
                         <h3>Create your account</h3>
                         <div class="body-text">Enter your personal details to create account</div>
                     </div>
-                    <form action="{{ secure_asset(route('register.post')) }}" method="POST" class="form-login flex flex-column gap24">
+                    <form action="{{ route('register.post') }}" method="POST" class="form-login flex flex-column gap24">
                         @csrf
                         <fieldset class="name">
                             <div class="body-title mb-10">Your username <span class="tf-color-1">*</span></div>

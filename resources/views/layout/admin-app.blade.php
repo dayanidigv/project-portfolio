@@ -122,7 +122,7 @@
                                 <a href="#" class="">
                                     <div class="icon"><i class="icon-log-out"></i></div>
                                     <div class="text">
-                                        <form action="{{ secure_asset(route('logout')) }}" method="POST" style="display:inline;">
+                                        <form action="{{ route('logout') }}" method="POST" style="display:inline;">
                                             @csrf
                                             <button type="submit" class="logout-button" style="background:none; border:none; padding:0; margin:0; color:inherit; cursor:pointer;">Logout</button>
                                         </form>
@@ -226,7 +226,7 @@
                                                 <div class="icon">
                                                     <i class="icon-log-out"></i>
                                                 </div>
-                                                <form action="{{ secure_asset(route('logout')) }}" method="POST"
+                                                <form action="{{ route('logout') }}" method="POST"
                                                     style="display:inline;">
                                                     @csrf
                                                     <button type="submit" style="background:none; border:none; padding:0; margin:0; color:inherit; cursor:pointer;">Logout</button>
@@ -330,8 +330,8 @@
 
 
 @section('script')
-<script src="{{ secure_asset('js/zoom.js') }}"></script>
-<script src="{{ secure_asset('js/apexcharts/apexcharts.js') }}"></script>
-<!-- <script src="{{ secure_asset('js/switcher.js') }}"></script> -->
-<script src="{{ secure_asset('js/theme-settings.js') }}"></script>
+<script src="{{ asset('js/zoom.js') }}"></script>
+<script src="{{ asset('js/apexcharts/apexcharts.js') }}"></script>
+<!-- <script src="{{ asset('js/switcher.js') }}"></script> -->
+<script src="{{ asset('js/theme-settings.js') }}"></script>
 @endsection

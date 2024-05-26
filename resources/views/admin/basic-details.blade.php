@@ -8,7 +8,7 @@
         <h3>{{ $sectionName }}</h3>
         <ul class="breadcrumbs flex items-center flex-wrap justify-start gap10">
             <li>
-                <a href="{{ secure_asset(route('admin.dashboard')) }}">
+                <a href="{{ route('admin.dashboard') }}">
                     <div class="text-tiny">Admin</div>
                 </a>
             </li>
@@ -34,9 +34,9 @@
 
     <!-- form-basic-details -->
     @if (empty($pageData))
-        <form class="tf-section-2 " action="{{ secure_asset(route('admin.basic-details.store', ['id' => $userId]))}}" method="POST">
+        <form class="tf-section-2 " action="{{ route('admin.basic-details.store', ['id' => $userId])}}" method="POST">
     @else
-        <form class="tf-section-2 " action="{{secure_asset(route('admin.basic-details.update', ['id' => $userId]))}}" method="POST">
+        <form class="tf-section-2 " action="{{route('admin.basic-details.update', ['id' => $userId])}}" method="POST">
     @endif
     @csrf
         <div class="wg-box">

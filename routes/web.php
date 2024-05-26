@@ -81,6 +81,9 @@ Route::prefix('check')->group(function () {
     Route::get('/appurl', function () {
         return config('app.url');
     });
+    Route::get('/env', function () {
+        return config('app.env');
+    });
 });
 
 Route::get('/{publicName}', [PortfolioController::class, 'index'])->name('portfolio.index');

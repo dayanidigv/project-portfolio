@@ -8,7 +8,7 @@
             <h3>{{ $sectionName }}</h3>
             <ul class="breadcrumbs flex items-center flex-wrap justify-start gap10">
                 <li>
-                    <a href="{{ secure_asset(route('admin.dashboard')) }}"><div class="text-tiny">Admin</div></a>
+                    <a href="{{ route('admin.dashboard') }}"><div class="text-tiny">Admin</div></a>
                 </li>
                 <li>
                     <i class="icon-chevron-right"></i>
