@@ -1,12 +1,9 @@
 @extends('layout.app')
 @section('body')
 
-<div id="wrapper">
+<div id="wrapper"> 
     <div id="page" class="">
-
-        <!-- layout-wrap -->
         <div class="layout-wrap">
- 
             <!-- preload -->
             <div id="preload" class="preload-container">
                 <div class="preloading">
@@ -14,8 +11,6 @@
                 </div>
             </div>
             <!-- /preload -->
-
-            <!-- section-menu-left -->
             <div class="section-menu-left">
                 <div class="box-logo">
                     <a href="/" id="site-logo-inner"><h3> Portfolio </h3></a>
@@ -134,11 +129,7 @@
                     </div>
                 </div>
             </div>
-            <!-- /section-menu-left -->
-
-            <!-- section-content-right -->
             <div class="section-content-right">
-                <!-- header-dashboard -->
                 <div class="header-dashboard">
                     <div class="wrap">
                         <div class="header-left">
@@ -150,17 +141,14 @@
                             </div>
                         </div>
                         <div class="header-grid ">
-
                             <div class="header-item button-dark-light">
                                 <i class="icon-moon"></i>
                             </div>
-
                             <div class="header-item button-zoom-maximize">
                                 <div class="">
                                     <i class="icon-maximize"></i>
                                 </div>
                             </div>
-
                             <div class="popup-wrap noti type-header">
                                     <div class="dropdown">
                                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -204,7 +192,7 @@
                                         </ul>
                                     </div>
                             </div>
-
+                            <div class="divider"></div> 
                             <div class="popup-wrap user type-header">
                                 <div class="dropdown">
                                     <button class="btn btn-secondary dropdown-toggle" type="button"
@@ -239,22 +227,10 @@
                         </div>
                     </div>
                 </div>
-                <!-- /header-dashboard -->
-
-                <!-- main-content -->
                 <div class="main-content">
-
-
-                    <!-- main-content-wrap -->
                     <div class="main-content-inner ">
-
-
-
                         @yield('adminContent')
                     </div>
-                    <!-- /main-content-wrap -->
-
-
                     @section('style')
                     <style>
                         .bottom-page {
@@ -296,9 +272,6 @@
                         }
                     </style>
                     @endsection
-
-
-                    <!-- bottom-page -->
                     <div class="bottom-page">
                         <div class="body-text">
                             Design & Developed by <b class="ml-1"><a
@@ -313,22 +286,14 @@
                             </a>
                         </div>
                     </div>
-
-                    <!-- /bottom-page -->
                 </div>
-                <!-- /main-content -->
-
             </div>
-            <!-- /section-content-right -->
         </div>
-        <!-- /layout-wrap -->
     </div>
+    @yield('wrapper')
 </div>
 <!-- /#wrapper -->
 @endsection
-
-
-
 @section('script')
 <script src="{{ asset('js/zoom.js') }}"></script>
 <script src="{{ asset('js/apexcharts/apexcharts.js') }}"></script>

@@ -1,18 +1,3 @@
-/**
-    * selectImages
-    * menuleft
-    * tabs
-    * progresslevel
-    * collapse_menu
-    * fullcheckbox
-    * showpass
-    * gallery
-    * coppy
-    * select_colors_theme
-    * icon_function
-    * box_search
-    * preloader
-*/
 
 ; (function ($) {
 
