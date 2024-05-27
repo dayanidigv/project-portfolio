@@ -77,16 +77,20 @@
         <div class="wg-box">
 
             <div class="gap22 cols">
-                <fieldset class="category">
-                    <div class="body-title mb-10">Date of Birth <span class="tf-color-1">*</span></div>
-                    <div class="select">
-                        <input type="date" name="dob" value="{{ !empty($pageData) ? old('dob', $pageData->dob) : old('dob')}}" tabindex="0"
-                        aria-required="true" required="">
-                        @error('dob')
-                        <p class="text-tiny mt-1 text-danger">{{ $message }}</p>
-                        @enderror
-                    </div>
-                </fieldset>
+            @php
+                $dobFormatted = !empty($pageData) ? \Carbon\Carbon::parse($pageData->dob)->format('Y-m-d') : old('dob');
+            @endphp
+
+            <fieldset class="category">
+                <div class="body-title mb-10">Date of Birth <span class="tf-color-1">*</span></div>
+                <div class="select">
+                    <input type="date" id="dob" name="dob" value="{{ $dobFormatted }}" tabindex="0" aria-required="true" required="">
+                    @error('dob')
+                    <p class="text-tiny mt-1 text-danger">{{ $message }}</p>
+                    @enderror
+                </div>
+            </fieldset>
+
                 <fieldset class="male">
                     <div class="body-title mb-10">Gender <span class="tf-color-1">*</span></div>
                     <div class="select">

@@ -54,3 +54,4 @@
                 - About, Work, Contact
             - create message table in database
 
+26/05/2024  - fix all bug
