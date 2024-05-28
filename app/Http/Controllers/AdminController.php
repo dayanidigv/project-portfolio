@@ -7,6 +7,7 @@ use App\Models\BasicDetails;
 use App\Models\PublicPageUrls;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use stdClass;
 
 class AdminController extends Controller
 {
@@ -23,7 +24,12 @@ class AdminController extends Controller
         $userName = $user ? $user->name : 'Guest';
         $userId = $user ? $user->id : 'Guest';
 
-        if($sectionName == "Achievements"){
+        if ($sectionName == "Dashboard") {
+            $pageData = new stdClass(); 
+            $pageData->BasicDetails = $userId ? BasicDetails::where('user_id', $userId)->first() : null;
+            $pageData->publishPage = $userId ? PublicPageUrls::where('user_id', $userId)->first() : null;
+        }
+        else if($sectionName == "Achievements"){
             $pageData = $userId ? Achievement::where('user_id', $userId)->get() : []; 
             $pageData = $this->pageDataToBeEmpty($pageData);
         }else if($sectionName == "Basic Details"){

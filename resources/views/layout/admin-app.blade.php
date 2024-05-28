@@ -13,7 +13,7 @@
             <!-- /preload -->
             <div class="section-menu-left">
                 <div class="box-logo">
-                    <a href="/" id="site-logo-inner"><h3> Portfolio </h3></a>
+                    <a href="/admin" id="site-logo-inner"><h3> Portfolio </h3></a>
                     <div class="button-show-hide">
                         <i class="icon-menu-left"></i>
                     </div>
@@ -133,7 +133,7 @@
                 <div class="header-dashboard">
                     <div class="wrap">
                         <div class="header-left">
-                            <a href="/">
+                            <a href="/admin">
                                 <h3> Portfolio </h3>
                             </a>
                             <div class="button-show-hide">
