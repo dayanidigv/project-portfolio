@@ -26,6 +26,11 @@
             </ul>
         </div>
 
+        <?php
+                $option = request()->query('option');
+                $id = request()->query('id');
+        ?>
+
     <div class="tf-section-1 ">
         <div class="wg-box">
             <h3>Inbox</h3>
@@ -52,9 +57,13 @@
                                 <div class="body-text">{{ $data->subject }}</div>
                                 <div class="body-text">{{ $data->message }}</div>
                                 <div class="list-icon-function">
+                                    <a href="?&option=view&id={{ $data->id }}">
                                     <div class="item eye">
-                                        <i class="icon-eye"></i>
+                                        <div class="cursor-pointer">
+                                            <i class="icon-eye"></i>
+                                        </div>
                                     </div>
+                                </a>
                                 </div>
                             </li>
                         @endforeach
@@ -68,5 +77,54 @@
         </div>
     </div>
 </div>
+
+@endsection
+
+@section('wrapper')
+
+@if ($option == "view")
+<div class="show offcanvas offcanvas-end" tabindex="-1" id="offcanvasUpdate">
+    <div class="offcanvas-header">
+        <h6 id="offcanvasRightLabel">View Message</h6>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <form class="tf-section-1 ">
+            <div class="wg-box">
+                @if (!empty($pageData))
+                @foreach ($pageData as $data)
+                @if ( $data->id == $id)
+                <div class="body-title mb-10">Message received at {{ \Carbon\Carbon::parse($data->received_at)->format('F j, Y, g:i a') }}</div>
+                <fieldset class="name">   
+                    <div class="body-title mb-10">Name</div>
+                    <input class="flex-grow" type="text"  
+                        tabindex="0" value="{{ $data->name }}"
+                        aria-required="true" disabled>
+                </fieldset>
+                <fieldset class="value">
+                    <div class="body-title mb-10">Email</div>
+                    <input class="flex-grow" type="email" 
+                        tabindex="0" value="{{ $data->email }} "
+                        aria-required="true" disabled>
+                </fieldset>
+                <fieldset class="value">
+                    <div class="body-title mb-10">Subject</div>
+                    <input class="flex-grow" type="text" 
+                        tabindex="0" value="{{ $data->subject }} "
+                        aria-required="true" disabled>
+                </fieldset>
+                <fieldset class="message">
+                    <div class="body-title mb-10">Messages</div>
+                    <textarea class="mb-10"  tabindex="0" aria-required="true" disabled>{{ $data->message }}</textarea>
+                </fieldset>
+                @endif
+                @endforeach
+                @endif
+            </div>
+        </form>
+    </div>
+</div>
+@endif
+
 
 @endsection

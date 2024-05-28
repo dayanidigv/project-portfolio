@@ -149,7 +149,7 @@
                                     <i class="icon-maximize"></i>
                                 </div>
                             </div>
-                            <div class="popup-wrap noti type-header">
+                            <div class="cursor-pointer popup-wrap noti type-header" data-bs-toggle="offcanvas">
                                     <div class="dropdown">
                                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                             <span class="header-item">
@@ -169,7 +169,7 @@
                                                     <div class="noti-item w-full wg-user active">
                                                         <div class="flex-grow">
                                                             <div class="flex items-center justify-between">
-                                                                <a href="#" class="body-title">{{$message->subject}}</a>
+                                                                <a href="{{route('admin.messages.inbox')}}?option=view&id={{$message->id}}" class="body-title">{{$message->subject}}</a>
                                                                 <div class="time">{{ \Carbon\Carbon::parse($message->received_at)->format('M d, Y, h:i A') }}</div>
                                                             </div>
                                                             <div class="text-tiny">{{$message->message}}</div>
@@ -177,7 +177,7 @@
                                                     </div>
                                                 </li>
                                                 @endforeach
-                                                <li><a href="#" class="tf-button w-full">View all</a></li>
+                                                <li><a href="{{route('admin.messages.inbox')}}" class="tf-button w-full">View all</a></li>
                                             @else
                                                 <li>
                                                     <div class="noti-item w-full wg-user active">
@@ -192,7 +192,6 @@
                                         </ul>
                                     </div>
                             </div>
-                            <div class="divider"></div> 
                             <div class="popup-wrap user type-header">
                                 <div class="dropdown">
                                     <button class="btn btn-secondary dropdown-toggle" type="button"

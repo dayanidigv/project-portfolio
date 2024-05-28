@@ -6,24 +6,10 @@ use App\Models\Messages;
 use App\Models\PublicPageUrls;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MessageController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -71,32 +57,20 @@ class MessageController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function makeAsRead($messageID)
     {
-        //
+        $user = Auth::user();
+        if ($user) {
+            $message = $user->messages()->where('id', $messageID)->first();
+            if ($message) {
+                $message->read = 1;
+                $message->save();
+                return redirect()->route('admin.messages.inbox')->with('message', 'Message has been successfully marked as read.');
+            }
+            return redirect()->back()->with('error', 'Message not found.');
+        }
+        return redirect()->back()->with('error', 'User not authenticated.');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
 }

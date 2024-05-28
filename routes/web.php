@@ -33,6 +33,10 @@ Route::middleware('auth')->group(function () {
             Route::get('/archived-messages', 'archivedMessages')->name('admin.messages.archived');
         });
 
+        Route::controller(MessageController::class)->group(function () {
+            Route::post('/admin/message/${messageID}/make-as-read', 'makeAsRead')->name('admin.inbox.make-as-read');
+        });
+
         Route::controller(AchievementController::class)->group(function () {
             Route::post('/achievements/${id}/store', 'store')->name('admin.achievements.store');
             Route::post('/achievements/${id}/update', 'update')->name('admin.achievements.update');

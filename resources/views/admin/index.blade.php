@@ -29,6 +29,7 @@
                     <h6>Basic Details</h6>
                     @if($pageData->BasicDetails != null )
                     <div class="body-text">Completed</div>
+                    <a class="body-text text-primary" href="{{route('admin.basic-details')}}">Click here to Update</a>
                     @else
                     <a class="body-text text-primary" href="{{route('admin.basic-details')}}">Click here to complete</a>
                     @endif
@@ -41,8 +42,6 @@
                     @else
                     <div class="body-text">Not Selected</div> 
                     @endif
-                    
-                    
                 </div>
                 <div class="road-map-item {{$pageData->BasicDetails != null ? ($pageData->BasicDetails != null ? 'active' : '') : ''}}">
                     <div class="icon"><i class="icon-check"></i></div>
@@ -52,7 +51,7 @@
                             <div class="body-text">Published</div>
                             <a class="body-text text-primary" href="{{route('index')}}/{{$pageData->publishPage->public_name}}" target="_blank">Click here to view Page</a>
                         @else
-                            <a class="body-text text-primary" href="{{route('admin.basic-details')}}">Click here to Publish</a>
+                            <a class="body-text text-primary" href="{{route('admin.public_page_url')}}">Click here to Publish</a>
                         @endif
                     @else
                         <div class="body-text">Pending</div>

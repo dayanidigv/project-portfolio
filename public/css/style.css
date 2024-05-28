@@ -6257,12 +6257,8 @@ select.h40 {
   }
   .layout-wrap .section-content-right .header-dashboard .wrap .header-grid > .divider,
   .layout-wrap .section-content-right .header-dashboard .wrap .header-grid > .user,
-  .layout-wrap .section-content-right .header-dashboard .wrap .header-grid > .apps,
-  .layout-wrap .section-content-right .header-dashboard .wrap .header-grid > .button-dark-light,
   .layout-wrap .section-content-right .header-dashboard .wrap .header-grid > .button-zoom-maximize,
-  .layout-wrap .section-content-right .header-dashboard .wrap .header-grid > .message,
-  .layout-wrap .section-content-right .header-dashboard .wrap .header-grid > .noti,
-  .layout-wrap .section-content-right .header-dashboard .wrap .header-grid > .country {
+  .layout-wrap .section-content-right .header-dashboard .wrap .header-grid > .message{
     display: none;
   }
   .tf-section-6 > div:nth-child(1) {
