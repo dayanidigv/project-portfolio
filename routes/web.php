@@ -4,6 +4,8 @@ use App\Http\Controllers\AchievementController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BasicDetailsController;
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\IconsController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\PublicPageUrlController;
@@ -25,6 +27,7 @@ Route::middleware('auth')->group(function () {
             Route::get('/public-page-url', 'public_page_url')->name('admin.public_page_url');
             Route::get('/basic-details', 'basicDetails')->name('admin.basic-details');
             Route::get('/achievements', 'achievements')->name('admin.achievements');
+            Route::get('/skills', 'skills')->name('admin.skills');
             Route::get('/faqs', 'faqs')->name('admin.faqs');
             Route::get('/publications', 'publications')->name('admin.publications');
             Route::get('/awards', 'awards')->name('admin.awards');
@@ -71,6 +74,10 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::prefix('api')->group(function () {
+    Route::prefix('icons')->group(function () {
+        Route::get("/",[IconsController::class,'icons'])->name("api.icons");
+        Route::get("/search/{searchTerm}",[IconsController::class,'searchIcons'])->name("api.icons.search");
+    });
     Route::prefix('{username}')->group(function () {
         Route::prefix('get')->group(function () {
             Route::get('achievement', [AchievementController::class, 'show']);
@@ -79,15 +86,9 @@ Route::prefix('api')->group(function () {
 });
 
 Route::prefix('check')->group(function () {
-    Route::get('/timezone', function () {
-        return config('app.timezone');
-    });
-    Route::get('/appurl', function () {
-        return config('app.url');
-    });
-    Route::get('/env', function () {
-        return config('app.env');
-    });
+    Route::get('/timezone', function () { return config('app.timezone'); });
+    Route::get('/appurl', function () { return config('app.url'); });
+    Route::get('/env', function () { return config('app.env'); });
 });
 
 Route::get('/{publicName}', [PortfolioController::class, 'index'])->name('portfolio.index');
