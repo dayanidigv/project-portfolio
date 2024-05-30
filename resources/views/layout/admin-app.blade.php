@@ -46,9 +46,15 @@
                                     <div class="icon">
                                         <i class="icon-user"></i>
                                     </div>
-                                    <div class="text">About Page</div>
+                                    <div class="text">About</div>
                                 </a>
                                 <ul class="sub-menu">
+                                    <li class="sub-menu-item">
+                                        <a href="{{ route('admin.skills') }}"
+                                            class="{{ $sectionName == 'Skills' ? 'active' : '' }}">
+                                            <div class="text">Skills</div>
+                                        </a>
+                                    </li>
                                     <li class="sub-menu-item">
                                         <a href="{{ route('admin.achievements') }}"
                                             class="{{ $sectionName == 'Achievements' ? 'active' : '' }}">

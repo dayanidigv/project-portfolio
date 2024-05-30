@@ -1343,7 +1343,7 @@ a:hover, a:focus {
 .shop-item .image img {
   width: 36px;
   height: 36px;
-  border-radius: 50%;
+  border-radius: 5px;
 }
 .shop-item a:hover {
   color: var(--Main) !important;

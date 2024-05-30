@@ -34,6 +34,8 @@ Route::middleware('auth')->group(function () {
             Route::get('/testimonial', 'testimonial')->name('admin.testimonial');
             Route::get('/inbox-messages', 'inboxMessages')->name('admin.messages.inbox');
             Route::get('/archived-messages', 'archivedMessages')->name('admin.messages.archived');
+            Route::post("/{id}/save-skills",'saveSkills')->name("admin.skills.store");
+            Route::delete('/skills/{id}/delete', 'destroySkills')->name('admin.skills.destroy');
         });
 
         Route::controller(MessageController::class)->group(function () {
@@ -56,6 +58,7 @@ Route::middleware('auth')->group(function () {
             Route::post('/basic-details/${id}/store', 'store')->name('admin.basic-details.store');
             Route::post('/basic-details/${id}/update', 'update')->name('admin.basic-details.update');
         });
+
     });
 
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');

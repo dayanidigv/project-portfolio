@@ -7,6 +7,8 @@
     <meta name="author" content="innak">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <!-- Theme Style -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/animate.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/animation.css') }}">
@@ -14,8 +16,10 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-select.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/notify.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/select2.min.css') }}">
 
     @yield('style')
+    @stack('css')
     <!-- Font -->
     <link rel="stylesheet" href="{{ asset('font/fonts.css') }}">
 
@@ -38,6 +42,8 @@
     <script src="{{ asset('js/bootstrap-select.min.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
     <script src="{{ asset('js/notify.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
+       
 
     <!-- Display success message -->
     @if (session('message'))

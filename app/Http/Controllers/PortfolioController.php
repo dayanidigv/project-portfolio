@@ -33,10 +33,14 @@ class PortfolioController extends Controller
             return view('template.portfolio-1.message', ['user' => $user]);
         }
 
+        
         $user->primaryColor = "#ff0000";
 
         $user->publicName = $publicName;
         $user->currentPage = "/";
+
+        $User = User::find($pageData->user_id);
+        $user->skills = $User->skills()->get()->isEmpty() ? null : $User->skills()->get();
 
         return view('template.portfolio-1.index', ['user' => $user]);
     }
