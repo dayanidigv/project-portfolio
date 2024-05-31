@@ -8,6 +8,9 @@
                     <div class="card-body">
                         <div class="image text-center">
                             <!-- <img src="img/images/profile.png" alt="profile"> -->
+                            @if($user->publicName == "dayanidi")
+                             <img src="/profile/dayanidi.png" alt="profile" height="250px">
+                            @endif
                         </div>
                         <div class="text">
                             <h3 class="card-title">{{ $user->name }} 👋</h3>
