@@ -61,19 +61,39 @@
                             </div>
                         </div>
 
-                        <div class="counter-area ">
+                        
+                        <!-- Counter -->
+                        <div class="container mt-5">
                             @if(!empty($user->achievements))
-                            <div class="counter">
-                                @foreach ( $user->achievements as $data )
-                                <div class="counter-item">
-                                    <h3 class="number ">{{$data->achievements_value}}+</h3>
-                                    <p class="subtitle primary-color">{{$data->achievements_name}}</p>
+                                <div class="row">
+                                    @foreach($user->achievements as $data)
+                                        <div class="col-6 col-md-4 col-lg-2 col-xl-3 mb-4 gap-4">
+                                            <h3 class="achievement-number">{{$data->achievements_value}}+</h3>
+                                            <p class="achievement-subtitle">{{$data->achievements_name}}</p>
+                                        </div>
+                                    @endforeach
                                 </div>
-                                @endforeach
-                            </div>
                             @endif
                         </div>
 
+                        <!-- Skills -->
+                        @if($user->skills != null)
+                        <div class="working-with-area">
+                            <h2 class="main-common-title">Skills
+                            </h2>
+                            <div class="working-with-main">
+                                @foreach ($user->skills as $skill)
+                                    @if ($skill->url != null)
+                                        <div class="items">
+                                            <img src="{{$skill->url}}" alt="notion">
+                                        </div>
+                                    @endif
+                                @endforeach
+                            </div>
+                        </div>
+                        @endif
+
+                        <!-- work together slider -->
                         <div class="work-together-slider">
                             <div class="slider-main d-flex gap-4 align-items-center">
                                 <div class="slider-item">
@@ -86,6 +106,8 @@
                                 </div>
                             </div>
                         </div>
+
+                        
                     </div>
                 </div>
             </div>

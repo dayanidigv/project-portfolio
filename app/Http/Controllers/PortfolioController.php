@@ -74,6 +74,8 @@ class PortfolioController extends Controller
         if($currentPage == "about"){
             $achievements = Achievement::where('user_id', $pageData->user_id)->get();
             $user->achievements = $this->pageDataToBeEmpty($achievements);
+            $User = User::find($pageData->user_id);
+            $user->skills = $User->skills()->get()->isEmpty() ? null : $User->skills()->get();
         }
         
         if (view()->exists('template.portfolio-1.' . $currentPage)) {

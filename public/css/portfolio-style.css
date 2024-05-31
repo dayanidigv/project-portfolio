@@ -916,7 +916,22 @@ p {
 	line-height: 0.9em;
 }
 
+.achievement-number {
+	font-size: 40px;
+	font-weight: 600;
+	color: var(--primary);
+	line-height: 0.9em;
+}
+
 .content-box-card .counter-area .counter .counter-item .subtitle {
+	font-size: 16px;
+	font-weight: 400;
+	color: var(--light-black);
+	line-height: 1.5em;
+	margin-top: 8px;
+}
+
+.achievement-subtitle{
 	font-size: 16px;
 	font-weight: 400;
 	color: var(--light-black);
@@ -2265,7 +2280,11 @@ p {
 }
 
 .dark-theme .content-box-card .counter-area .counter .counter-item .number {
-	color: var(--dark-theme-white);
+	color: var(var(--primary));
+}
+
+.achievement-number{
+	color: var(var(--primary));
 }
 
 .dark-theme .content-box-card .main-common-title {
