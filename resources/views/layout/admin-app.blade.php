@@ -38,6 +38,12 @@
                                             <div class="text">Basic Details</div>
                                         </a>
                                     </li>
+                                    <li class="sub-menu-item">
+                                        <a href="{{ route('admin.profile.index') }}"
+                                            class="{{ $sectionName == 'Profile' ? 'active' : '' }}">
+                                            <div class="text">Profile</div>
+                                        </a>
+                                    </li>
                                 </ul>
                             </li>
 

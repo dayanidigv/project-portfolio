@@ -68,10 +68,4 @@ class AchievementController extends Controller
         return redirect()->route('admin.achievements')->with('message', 'Achievement deleted successfully!');
     }
     
-    public function Show()
-    {
-        $data = Achievement::all();
-        // Return a response
-        return $data;
-    }
 }

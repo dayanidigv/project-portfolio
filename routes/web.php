@@ -8,10 +8,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\IconsController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PublicPageUrlController;
 use Illuminate\Support\Facades\Route;
-
-Route::get('achievement/', [AchievementController::class, 'show']);
 
 
 
@@ -36,6 +35,11 @@ Route::middleware('auth')->group(function () {
             Route::get('/archived-messages', 'archivedMessages')->name('admin.messages.archived');
             Route::post("/{id}/save-skills",'saveSkills')->name("admin.skills.store");
             Route::delete('/skills/{id}/delete', 'destroySkills')->name('admin.skills.destroy');
+        });
+
+        Route::controller(ProfileController::class)->group(function () {
+            Route::get('/profile', 'index')->name('admin.profile.index');
+            Route::post('/profile/{encodeId}', 'update')->name('admin.profile.update');
         });
 
         Route::controller(MessageController::class)->group(function () {
